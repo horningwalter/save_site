@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: string;
+}
+
+const { title, description, jsonLd } = Astro.props;
+// The proposal stays out of search engines until the client approves it.
+// Set PUBLIC_NOINDEX=false only for the production launch.
+const noindex = import.meta.env.PUBLIC_NOINDEX !== 'false';
+
+// Social previews need absolute URLs. Set PUBLIC_SITE_URL on the final domain;
+// on Vercel previews the deployment URL is used automatically.
+const siteUrl =
+  import.meta.env.PUBLIC_SITE_URL ??
+  (import.meta.env.VERCEL_URL ? `https://${import.meta.env.VERCEL_URL}` : undefined);
+const absolute = (path: string) => (siteUrl ? new URL(path, siteUrl).href : path);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f8f3ed" />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="/media/companheiros-save.webp" fetchpriority="high" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    {siteUrl && <meta property="og:url" content={absolute(Astro.url.pathname)} />}
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="SAVE Clínica Veterinária" />
+    <meta property="og:image" content={absolute('/media/fachada-frontal.webp')} />
+    <meta property="og:image:alt" content="Fachada do novo hospital veterinário SAVE em Santa Quitéria, Curitiba" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

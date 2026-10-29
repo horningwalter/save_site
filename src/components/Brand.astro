@@ -1,0 +1,22 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<a href="#inicio" class:list={['brand', className]} aria-label="SAVE Clínica Veterinária — ir para o início">
+  <img
+    src="/media/logo-save.jpg"
+    alt=""
+    width="44"
+    height="44"
+    class="brand-logo"
+    decoding="async"
+  />
+  <span class="brand-text">
+    <span class="brand-name">SAVE</span>
+    <span class="brand-sub">Clínica Veterinária</span>
+  </span>
+</a>

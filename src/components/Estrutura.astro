@@ -1,0 +1,92 @@
+---
+const ambientes = [
+  {
+    src: '/media/recepcao-balcao.webp',
+    alt: 'Balcão de atendimento da recepção do novo hospital veterinário SAVE',
+    title: 'Recepção',
+    note: 'Balcão de atendimento',
+    num: '01',
+  },
+  {
+    src: '/media/recepcao-espera.webp',
+    alt: 'Sala de espera com poltronas azuis e painel de especialidades',
+    title: 'Sala de espera',
+    note: 'Acolhimento e conforto',
+    num: '02',
+  },
+  {
+    src: '/media/totem-24h.webp',
+    alt: 'Totem de atendimento e fachada do novo hospital SAVE',
+    title: 'Acesso',
+    note: 'Totem de atendimento',
+    num: '03',
+  },
+  {
+    src: '/media/recepcao-atendimento.webp',
+    alt: 'Recepção do novo hospital SAVE com balcão de madeira e área de atendimento',
+    title: 'Atendimento',
+    note: 'Recepção e orientação',
+    num: '04',
+  },
+  {
+    src: '/media/fachada-rua.webp',
+    alt: 'Fachada do novo hospital veterinário SAVE vista da rua, com toldo e totem de atendimento',
+    title: 'Fachada',
+    note: 'Vista da rua',
+    num: '05',
+  },
+];
+---
+
+<section id="estrutura" class="section section--line">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <div class="section-label reveal">
+          <span class="n">02</span>
+          <span class="t">A estrutura</span>
+          <span class="line" aria-hidden="true"></span>
+        </div>
+        <h2 class="h2 reveal" style="--delay:40ms">
+          Um espaço que <span class="accent">acolhe.</span>
+        </h2>
+      </div>
+      <div class="reveal" style="--delay:80ms">
+        <p class="body-copy">
+          Ambientes planejados para o conforto do seu pet e da sua família, do
+          primeiro atendimento à sala de espera.
+        </p>
+        <p class="eyebrow mt-4">05 ambientes do projeto</p>
+      </div>
+    </div>
+
+    <div class="gallery">
+      {ambientes.map((item, i) => (
+        <figure class={`gallery-item g${i + 1} reveal`} style={`--delay:${i * 55}ms`}>
+          <div class="gallery-media">
+            <img
+              src={item.src}
+              alt={item.alt}
+              width="1080"
+              height="668"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="media-caption">
+            <span>
+              <span class="media-caption__title">{item.title}</span>
+              <span class="media-caption__note">{item.note}</span>
+            </span>
+            <span class="media-caption__index">{item.num}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <p class="source-note">
+      Renders do projeto arquitetônico do novo hospital, desenvolvido por designer
+      parceira.
+    </p>
+  </div>
+</section>

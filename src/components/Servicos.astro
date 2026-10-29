@@ -1,0 +1,77 @@
+---
+const services = [
+  { title: 'Consultas', desc: 'Atendimento clínico e acompanhamento do seu pet.' },
+  { title: 'Exames', desc: 'Diagnóstico com apoio de exames.' },
+  { title: 'Cirurgias', desc: 'Procedimentos realizados com segurança.' },
+  { title: 'Internação', desc: 'Acompanhamento contínuo durante a recuperação.' },
+  { title: 'Emergência', desc: 'Atendimento para situações urgentes.' },
+  { title: 'Especialidades', desc: 'Cuidado direcionado para necessidades específicas.' },
+];
+---
+
+<section id="servicos" class="section section--tint">
+  <div class="shell">
+    <div class="services-grid">
+      <div class="services-intro">
+        <div class="section-label reveal">
+          <span class="n">03</span>
+          <span class="t">Serviços</span>
+          <span class="line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="h2 reveal" style="--delay:40ms">
+          Cuidado em cada <span class="accent">etapa.</span>
+        </h2>
+
+        <p class="body-copy reveal mt-6" style="--delay:80ms">
+          O novo hospital veterinário da SAVE oferecerá atendimento completo para
+          a saúde do seu pet.
+        </p>
+
+        <a
+          href="https://wa.me/5541996665808"
+          class="btn btn-primary reveal mt-6"
+          target="_blank"
+          rel="noopener"
+          style="--delay:120ms"
+        >
+          Tirar dúvidas pelo WhatsApp
+          <span class="ico" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+
+        <p class="small reveal mt-4" style="--delay:160ms">
+          Serviços previstos para o novo hospital. Consulte a disponibilidade pelo
+          WhatsApp.
+        </p>
+      </div>
+
+      <div class="service-list">
+        {services.map((service, i) => (
+          <a
+            href="https://wa.me/5541996665808"
+            class="service-row reveal"
+            target="_blank"
+            rel="noopener"
+            aria-label={`Falar no WhatsApp sobre ${service.title}`}
+            style={`--delay:${i * 45}ms`}
+          >
+            <span class="service-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <span>
+              <span class="service-title">{service.title}</span>
+              <span class="service-desc">{service.desc}</span>
+            </span>
+            <span class="service-icon" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M9 7h8v8" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

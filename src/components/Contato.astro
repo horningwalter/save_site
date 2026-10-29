@@ -1,0 +1,107 @@
+---
+const links = [
+  {
+    label: 'WhatsApp',
+    value: '+55 41 99666-5808',
+    href: 'https://wa.me/5541996665808',
+    external: true,
+  },
+  {
+    label: 'Telefone',
+    value: '3045-5808',
+    href: 'tel:+554130455808',
+    external: false,
+  },
+  {
+    label: 'Instagram',
+    value: '@savecentroveterinario',
+    href: 'https://www.instagram.com/savecentroveterinario',
+    external: true,
+  },
+  {
+    label: 'Facebook',
+    value: 'savecentroveterinario',
+    href: 'https://www.facebook.com/savecentroveterinario',
+    external: true,
+  },
+];
+---
+
+<section id="contato" class="contact">
+  <div class="shell">
+    <div class="contact-grid">
+      <div>
+        <div class="section-label section-label--light reveal">
+          <span class="n">05</span>
+          <span class="t">Contato</span>
+          <span class="line" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="h2 reveal" style="--delay:40ms">Fale com a SAVE.</h2>
+
+        <p class="editorial-line reveal" style="--delay:80ms">
+          Vamos cuidar de quem você ama.
+        </p>
+
+        <p class="body-copy reveal" style="--delay:120ms">
+          Estamos à disposição para cuidar do seu pet. Fale com a nossa equipe
+          pelo WhatsApp ou conheça o projeto do novo hospital em Santa Quitéria.
+        </p>
+
+        <a
+          href="https://wa.me/5541996665808"
+          class="btn btn-light btn-lg reveal"
+          target="_blank"
+          rel="noopener"
+          style="--delay:160ms"
+        >
+          Chamar no WhatsApp
+          <span class="ico" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="contact-list reveal" style="--delay:100ms">
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class="contact-row"
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener' : undefined}
+          >
+            <span>
+              <span class="k">{link.label}</span>
+              <span class="v">{link.value}</span>
+            </span>
+            <span class="arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 17L17 7M9 7h8v8" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="contact-foot reveal" style="--delay:140ms">
+      <div>
+        <p class="k">Novo endereço</p>
+        <address>Rua Curupaitis, 1366 · Santa Quitéria · Curitiba / PR</address>
+      </div>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Rua+Curupaitis+1366+Curitiba+PR"
+        class="link-arrow link-arrow--light"
+        target="_blank"
+        rel="noopener"
+      >
+        Como chegar
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17L17 7M9 7h8v8" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

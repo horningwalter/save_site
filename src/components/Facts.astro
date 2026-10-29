@@ -1,0 +1,27 @@
+---
+const facts = [
+  { k: 'Novo endereço', v: 'Rua Curupaitis, 1366' },
+  { k: 'Bairro', v: 'Santa Quitéria · Curitiba / PR' },
+  { k: 'Projeto', v: 'Em transição para Hospital Veterinário' },
+  { k: 'WhatsApp', v: '+55 41 99666-5808', href: 'https://wa.me/5541996665808' },
+];
+---
+
+<section class="facts" aria-label="Informações sobre a nova unidade">
+  <div class="shell">
+    <dl class="facts-grid">
+      {facts.map((fact) => (
+        <div class="facts-cell">
+          <dt class="facts-k">{fact.k}</dt>
+          <dd class="facts-v">
+            {fact.href ? (
+              <a href={fact.href} target="_blank" rel="noopener">{fact.v}</a>
+            ) : (
+              fact.v
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
