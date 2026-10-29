@@ -1283,7 +1283,7 @@ body.menu-open {
   background: var(--color-brand);
 }
 
-.timeline-item--future::before {
+.timeline-item--now::before {
   background: var(--color-background);
   border: 1px solid var(--color-brand);
 }
@@ -1296,7 +1296,7 @@ body.menu-open {
   color: var(--color-text-muted);
 }
 
-.timeline-item--future .timeline-k {
+.timeline-item--now .timeline-k {
   color: var(--color-brand);
 }
 

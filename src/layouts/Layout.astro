@@ -42,9 +42,9 @@ const absolute = (path: string) => (siteUrl ? new URL(path, siteUrl).href : path
     <meta property="og:type" content="website" />
     {siteUrl && <meta property="og:url" content={absolute(Astro.url.pathname)} />}
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="SAVE Clínica Veterinária" />
+    <meta property="og:site_name" content="SAVE Hospital Veterinário" />
     <meta property="og:image" content={absolute('/media/fachada-frontal.webp')} />
-    <meta property="og:image:alt" content="Fachada do novo hospital veterinário SAVE em Santa Quitéria, Curitiba" />
+    <meta property="og:image:alt" content="Fachada do hospital veterinário SAVE em Santa Quitéria, Curitiba" />
     <meta name="twitter:card" content="summary_large_image" />
     <noscript>
       <style>

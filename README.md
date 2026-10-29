@@ -1,6 +1,6 @@
-# SAVE · Clínica Veterinária
+# SAVE · Hospital Veterinário
 
-Site institucional da SAVE (Serviço de Atendimento Veterinário Especializado), em Curitiba, para anunciar a mudança para a nova unidade em Santa Quitéria e a transição para Hospital Veterinário.
+Site institucional da SAVE (Serviço de Atendimento Veterinário Especializado), em Curitiba. Apresenta a mudança já realizada para a nova unidade em Santa Quitéria e o novo momento como Hospital Veterinário.
 
 ## Stack
 
