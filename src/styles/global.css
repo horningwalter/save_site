@@ -980,12 +980,6 @@ body.menu-open {
   object-fit: cover;
 }
 
-.hero-figure .media-caption {
-  margin-top: 14px;
-  padding-top: 10px;
-  padding-right: var(--page-gutter);
-}
-
 /* ---------- facts band ---------- */
 
 .facts {
@@ -1675,10 +1669,6 @@ body.menu-open {
   .hero-figure__media {
     aspect-ratio: 2 / 1;
     border-radius: var(--radius-image);
-  }
-
-  .hero-figure .media-caption {
-    padding-right: 0;
   }
 
   .nh {
